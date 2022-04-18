@@ -9,6 +9,15 @@ public class UserDaoHibernateImpl implements UserDao {
 
     }
 
+    @Override
+    public void openConnection() {
+
+    }
+
+    @Override
+    public void closeConnection() {
+
+    }
 
     @Override
     public void createUsersTable() {
