@@ -9,25 +9,11 @@ import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
 
-    private Connection connection;
+    private final Connection connection;
     private static long idCount = 0;
 
     public UserDaoJDBCImpl() {
-      openConnection();
-    }
-
-    @Override
-    public void openConnection() {
         connection = Util.getConnection();
-    }
-
-    @Override
-    public void closeConnection() {
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override

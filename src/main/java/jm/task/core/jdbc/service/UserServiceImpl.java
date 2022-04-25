@@ -12,16 +12,6 @@ public class UserServiceImpl implements UserService {
     private final UserDao userDao = new UserDaoHibernateImpl();
 
     @Override
-    public void openConnection() {
-        userDao.openConnection();
-    }
-
-    @Override
-    public void closeConnection() {
-        userDao.closeConnection();
-    }
-
-    @Override
     public void createUsersTable() {
         userDao.createUsersTable();
     }
