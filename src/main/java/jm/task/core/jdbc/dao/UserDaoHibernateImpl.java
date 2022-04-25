@@ -41,11 +41,10 @@ public class UserDaoHibernateImpl implements UserDao {
         try {
             transaction = session.beginTransaction();
             String sql = "CREATE TABLE IF NOT EXISTS users" +
-                    "(id BIGINT not NULL, " +
+                    "(id SERIAL PRIMARY KEY , " +
                     " name VARCHAR(255), " +
                     " lastname VARCHAR(255), " +
-                    " age INTEGER, " +
-                    " PRIMARY KEY (id))";
+                    " age INTEGER)";
             session.createSQLQuery(sql).executeUpdate();
             transaction.commit();
         }catch(Exception e){
